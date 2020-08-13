@@ -18,10 +18,10 @@ module "jx" {
 
 output "connect" {
   description = "Connect to cluster"
-  value       = "connect to your cluster using ${module.jx.connect}"
+  value       = "connect to your cluster using `${module.jx.connect}`"
 }
 
-output "next_install" {
+output "next" {
   description = "Follow instructions to enable Jenkins X install via GitOps"
   value       = "http://jenkins-x.io/foo"
 }

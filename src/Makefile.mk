@@ -17,6 +17,9 @@ init:
 
 .PHONY: fetch
 fetch: init
+	# populate missing gcp project and google secrets manager prefix
+	jx gitops secretsmapping edit --gcp-project-id $PROJECT_ID --gcp-unique-prefix $CLUSTER_NAME
+
 	# lets configure the cluster gitops repository URL on the requirements if its missing
 	jx gitops repository --source-dir $(OUTPUT_DIR)/namespaces
 
