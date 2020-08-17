@@ -1,33 +1,30 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 set -e
+set -x
 
-# in case we are in a clean git clone...
-terraform init $TERRAFORM_INPUT
+source `dirname "$0"`/setenv.sh
 
-# we are about to remove the kubernetes cluster anyway so lets avoid having terraform try and remove k8s resources
-terraform state list | grep .kubernetes_service_account. | while read line
-do
-if [ -z "$line" ]
+if [ -z $PROJECT_ID ]
 then
-      echo "ignoring empty line"
-else
-      echo "removing terraform state of $line"
-      terraform state rm $line
+  echo "Please supply the 'PROJECT_ID' environment variable for your GCP Project ID"
+  echo "e.g."
+  echo "export PROJECT_ID=myproject"
+  exit 1
 fi
-done
 
-terraform state list | grep .kubernetes_namespace. | while read line
-do
-if [ -z "$line" ]
+if [ -z $CLUSTER_NAME ]
 then
-      echo "ignoring empty line"
-else
-      echo "removing terraform state of $line"
-      terraform state rm $line
+  echo "Please supply the 'CLUSTER_NAME' environment variable for your GKE cluster name"
+  echo "e.g."
+  echo "export CLUSTER_NAME=mycluster"
+  exit 1
 fi
-done
 
+gcloud iam service-accounts delete $CLUSTER_NAME-dn@$PROJECT_ID.iam.gserviceaccount.com --project $PROJECT_ID --quiet
+gcloud iam service-accounts delete $CLUSTER_NAME-jb@$PROJECT_ID.iam.gserviceaccount.com --project $PROJECT_ID --quiet
+gcloud iam service-accounts delete $CLUSTER_NAME-bc@$PROJECT_ID.iam.gserviceaccount.com --project $PROJECT_ID --quiet
+gcloud iam service-accounts delete $CLUSTER_NAME-tekton@$PROJECT_ID.iam.gserviceaccount.com --project $PROJECT_ID --quiet
+gcloud iam service-accounts delete $CLUSTER_NAME-vo@$PROJECT_ID.iam.gserviceaccount.com --project $PROJECT_ID --quiet
+gcloud iam service-accounts delete $CLUSTER_NAME-vt@$PROJECT_ID.iam.gserviceaccount.com --project $PROJECT_ID --quiet
 
-terraform destroy $TERRAFORM_APPROVE
-
+gcloud container clusters delete $CLUSTER_NAME --project $PROJECT_ID --zone $ZONE --quiet

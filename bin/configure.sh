@@ -10,8 +10,17 @@ then
   exit 1
 fi
 
-echo "this script modifies the `dirname "$0"`/../values.auto.tfvars file..."
+if [ -z $CLUSTER_NAME ]
+then
+  echo "Please supply the 'CLUSTER_NAME' environment variable for your GKE cluster name"
+  echo "e.g."
+  echo "export CLUSTER_NAME=mycluster"
+  exit 1
+fi
 
-sed -i -e "s/gcp_project \".*\"/gcp_project = \"${PROJECT_ID}\"/" `dirname "$0"`/../values.auto.tfvars
+echo "this script modifies the `dirname "$0"`/setenv.sh file..."
+
+sed -i -e "s/PROJECT_ID=\".*\"/PROJECT_ID=\"${PROJECT_ID}\"/" `dirname "$0"`/setenv.sh
+sed -i -e "s/CLUSTER_NAME=\".*\"/CLUSTER_NAME=\"${CLUSTER_NAME}\"/" `dirname "$0"`/setenv.sh
 
 

@@ -2,6 +2,8 @@ FETCH_DIR := build/base
 TMP_TEMPLATE_DIR := build/tmp
 OUTPUT_DIR := config-root
 
+VAULT_ADDR ?= https://vault.secret-infra:8200
+
 .PHONY: clean
 clean:
 	rm -rf build $(OUTPUT_DIR)
@@ -12,14 +14,12 @@ init:
 	mkdir -p $(OUTPUT_DIR)/namespaces/jx
 	cp -r src/* build
 	mkdir -p $(FETCH_DIR)/cluster/crds
-	mkdir -p $(FETCH_DIR)/namespaces/nginx
+	#mkdir -p $(FETCH_DIR)/namespaces/nginx
+	#mkdir -p $(FETCH_DIR)/namespaces/jx-cli:0.0.330
 
 
 .PHONY: fetch
 fetch: init
-	# populate missing gcp project and google secrets manager prefix
-	jx gitops secretsmapping edit --gcp-project-id $PROJECT_ID --gcp-unique-prefix $CLUSTER_NAME
-
 	# lets configure the cluster gitops repository URL on the requirements if its missing
 	jx gitops repository --source-dir $(OUTPUT_DIR)/namespaces
 
@@ -29,7 +29,7 @@ fetch: init
 	# lets make sure we are using the latest jx-cli in the git operator Job
 	jx gitops image -s .jx/git-operator
 
-	# not sure why we need this...
+	# not sure why we need this but it avoids issues...
 	helm repo add jx http://chartmuseum.jenkins-x.io
 
 	# generate the yaml from the charts in helmfile.yaml
@@ -38,12 +38,13 @@ fetch: init
 	# split the files into one file per resource
 	jx gitops split --dir $(TMP_TEMPLATE_DIR)
 
-	# convert k8s Secrets => ExternalSecret resources
-	jx gitops secretsmapping --dir $(TMP_TEMPLATE_DIR)
-
 	# move the templated files to correct cluster or namespace folder
 	# setting the namespace on namespaced resources
 	jx gitops helmfile move --dir $(TMP_TEMPLATE_DIR) --output-dir $(OUTPUT_DIR)
+
+	# convert k8s Secrets => ExternalSecret resources using secret mapping + schemas
+	# see: https://github.com/jenkins-x/jx-secret#mappings
+	jx secret convert --dir $(OUTPUT_DIR)
 
 	# old approach
 	#jx gitops jx-apps template --template-values src/fake-secrets.yaml.txt -o $(OUTPUT_DIR)/namespaces
@@ -116,12 +117,12 @@ verify-ignore: verify-ingress-ignore
 secrets-populate:
 	# lets populate any missing secrets we have a generator defined for in the `.jx/gitops/secret-schema.yaml` file
 	# they can be modified/regenerated at any time via `jx secret edit`
-	-jx secret populate
+	-VAULT_ADDR=$(VAULT_ADDR) jx secret populate
 
 .PHONY: secrets-wait
 secrets-wait:
 	# lets wait for the ExternalSecrets service to populate the mandatory Secret resources
-	-jx secret wait
+	VAULT_ADDR=$(VAULT_ADDR) jx secret wait
 
 .PHONY: git-setup
 git-setup:
