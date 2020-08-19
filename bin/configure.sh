@@ -23,4 +23,9 @@ echo "this script modifies the `dirname "$0"`/setenv.sh file..."
 sed -i -e "s/PROJECT_ID=\".*\"/PROJECT_ID=\"${PROJECT_ID}\"/" `dirname "$0"`/setenv.sh
 sed -i -e "s/CLUSTER_NAME=\".*\"/CLUSTER_NAME=\"${CLUSTER_NAME}\"/" `dirname "$0"`/setenv.sh
 
+echo "modifying local boot service account so that it is configured with Googles Workload Identity"
+echo "please git add, commit and push the local changes"
+
+jx gitops annotate --dir .jx/git-operator/resources --kind ServiceAccount iam.gke.io/gcp-service-account=${CLUSTER_NAME}-boot@${PROJECT_ID}.iam.gserviceaccount.com
+
 
