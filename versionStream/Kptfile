@@ -3,9 +3,9 @@ kind: Kptfile
 metadata:
     name: versionStream
 upstream:
-    type: git
-    git:
-        commit: 8e0cea6c596ed66906d1a895936f6ff7db3524e8
-        repo: https://github.com/jenkins-x/jxr-versions
-        directory: /
-        ref: master
+  type: git
+  git:
+    commit: 3e0854c891ca62bbc9b7425562731a9e446a2eb2
+    repo: https://github.com/jenkins-x/jxr-versions
+    directory: /
+    ref: master
