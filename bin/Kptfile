@@ -3,9 +3,9 @@ kind: Kptfile
 metadata:
     name: bin
 upstream:
-    type: git
-    git:
-        commit: 449ee68c08afec73143969ade863ba93f9c35177
-        repo: https://github.com/jenkins-x/jx3-gitops-template
-        directory: /infra/gcloud/bin
-        ref: master
+  type: git
+  git:
+    commit: d4e965444335d3c024433d672b69e59847406698
+    repo: https://github.com/jenkins-x/jx3-gitops-template
+    directory: /infra/gcloud/bin
+    ref: master
