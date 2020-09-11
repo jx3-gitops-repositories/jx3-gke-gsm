@@ -11,6 +11,7 @@ releases:
 - chart: jenkins-x/jxboot-helmfile-resources
 - chart: external-secrets/kubernetes-external-secrets
 - chart: jx-labs/jenkins-x-crds
+- chart: jx3/jx-preview
 - chart: stable/nginx-ingress
 - chart: jenkins-x/tekton
 - chart: jenkins-x/lighthouse
