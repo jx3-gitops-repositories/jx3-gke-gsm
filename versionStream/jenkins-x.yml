@@ -26,7 +26,6 @@ pipelineConfig:
           - name: get-jx-prerelease-state
             command: ./jx/scripts/get-jx-prerelease-state.sh
           - name: changelog
-<<<<<<< HEAD
             command: jx
             args:
             - step
@@ -36,11 +35,11 @@ pipelineConfig:
             - ${VERSION}
             - --rev
             - "v${VERSION}"
-          - name: update-bot-fork
-            command: ./jx/scripts/update-bot-fork.sh
           - name: promote-vs
             command: ./jx/scripts/promote-vs.sh
-            image: gcr.io/jenkinsxio/jx-cli:3.0.52
+            image: gcr.io/jenkinsxio/jx-cli:3.0.152
+          - name: update-bot-fork
+            command: ./jx/scripts/update-bot-fork.sh
           - name: release-resources
             command: ./jx/scripts/release-resources.sh
             image: gcr.io/jenkinsxio-labs-private/jx-gitops
@@ -49,60 +48,8 @@ pipelineConfig:
           - name: update-jx-bot
             command: ./jx/scripts/update-jx-bot.sh
           - name: update-jx-website
-            image: gcr.io/jenkinsxio/builder-go:2.1.100-729
+            image: gcr.io/jenkinsxio/builder-go:2.1.142-761
             command: ./jx/scripts/update-jx-website.sh
-=======
-            environment:
-              - name: GIT_COMMITTER_EMAIL
-                value: jenkins-x@googlegroups.com
-              - name: GIT_AUTHOR_EMAIL
-                value: jenkins-x@googlegroups.com
-              - name: GIT_AUTHOR_NAME
-                value: jenkins-x-bot
-              - name: GIT_COMMITTER_NAME
-                value: jenkins-x-bot
-              - name: GOPATH
-                value: /workspace/go
-              - name: GOPROXY
-                value: http://jenkins-x-athens-proxy
-              - name: IS_JX_PRERELEASE
-                value: is_jx_prerelease.bool
-            steps:
-              - name: get-jx-prerelease-state
-                command: ./jx/scripts/get-jx-prerelease-state.sh
-
-              - name: changelog
-                command: jx
-                args:
-                - step
-                - changelog
-                - --verbose
-                - --version
-                - ${VERSION}
-                - --rev
-                - "v${VERSION}"
-
-              - name: promote-vs
-                command: ./jx/scripts/promote-vs.sh
-                image: gcr.io/jenkinsxio/jx-cli:3.0.152
-
-              - name: update-bot-fork
-                command: ./jx/scripts/update-bot-fork.sh
-
-              - name: release-resources
-                command: ./jx/scripts/release-resources.sh
-                image: gcr.io/jenkinsxio-labs-private/jx-gitops
-
-              - name: release-jx
-                command: ./jx/scripts/release-jx.sh
-
-              - name: update-jx-bot
-                command: ./jx/scripts/update-jx-bot.sh
-
-              - name: update-jx-website
-                image: gcr.io/jenkinsxio/builder-go:2.1.142-761
-                command: ./jx/scripts/update-jx-website.sh
->>>>>>> update versionStream (https://github.com/jenkins-x/jxr-versions) from master (8e0cea6c596ed66906d1a895936f6ff7db3524e8) to master (3e0854c891ca62bbc9b7425562731a9e446a2eb2)
     pullRequest:
       pipeline:
         agent:
