@@ -26,8 +26,8 @@ pipelineConfig:
         agent:
           image: gcr.io/jenkinsxio/builder-go-nodejs:2.1.142-761
         stages:
-          - name: ci
-            steps:
-              - command: jx/bdd/tls/ci.sh
-                image: gcr.io/jenkinsxio/jx-cli:3.0.232
-                name: runci
+        - name: ci
+          steps:
+          - command: jx/bdd/tls/ci.sh
+            image: gcr.io/jenkinsxio/jx-cli:3.0.252
+            name: runci
