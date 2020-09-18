@@ -1,7 +1,7 @@
 apiVersion: kpt.dev/v1alpha1
 kind: Kptfile
 metadata:
-    name: bin
+  name: bin
 upstream:
   type: git
   git:
