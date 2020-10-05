@@ -24,7 +24,7 @@ releases:
 - chart: jx-labs/jenkins-x-crds
 - chart: jx3/jx-preview
 - chart: stable/nginx-ingress
-- chart: cdf/tekton-pipelines
+- chart: cdf/tekton-pipeline
 - chart: jenkins-x/lighthouse
 - chart: jenkins-x/nexus
 - chart: jenkins-x/chartmuseum
