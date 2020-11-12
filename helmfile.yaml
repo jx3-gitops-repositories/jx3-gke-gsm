@@ -32,8 +32,8 @@ releases:
   namespace: secret-infra
   values:
   - versionStream/charts/external-secrets/kubernetes-external-secrets/values.yaml.gotmpl
-- chart: jx-labs/jenkins-x-crds
-  version: 0.0.7
+- chart: jx3/jenkins-x-crds
+  version: 3.0.4
   name: jenkins-x-crds
   namespace: jx
   values:
