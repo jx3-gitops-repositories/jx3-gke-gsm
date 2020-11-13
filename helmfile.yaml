@@ -77,7 +77,7 @@ releases:
   values:
   - versionStream/charts/stable/chartmuseum/values.yaml.gotmpl
 - chart: jx3/pusher-wave
-  version: 0.4.11
+  version: 0.4.12
   name: pusher-wave
   namespace: secret-infra
 - chart: jx3/jx-build-controller
