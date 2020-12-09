@@ -25,8 +25,8 @@ releases:
   skipDeps: null
 - chart: jx3/acme
   version: 0.0.13
-  name: acme-jx
   condition: jxRequirementsIngressTLS.enabled
+  name: acme-jx
   values:
   - ../../versionStream/charts/jx3/acme-jx/values.yaml.gotmpl
   - jx-values.yaml
@@ -57,14 +57,14 @@ releases:
   forceNamespace: ""
   skipDeps: null
 - chart: jx3/jx-preview
-  version: 0.0.133
+  version: 0.0.135
   name: jx-preview
   values:
   - jx-values.yaml
   forceNamespace: ""
   skipDeps: null
 - chart: jenkins-x/lighthouse
-  version: 0.0.881
+  version: 0.0.882
   name: lighthouse
   values:
   - ../../versionStream/charts/jenkins-x/lighthouse/values.yaml.gotmpl
