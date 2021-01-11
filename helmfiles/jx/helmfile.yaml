@@ -76,7 +76,7 @@ releases:
   - ../../versionStream/charts/jx3/jx-build-controller/values.yaml.gotmpl
   - jx-values.yaml
 - chart: jx3/jx-kh-check
-  version: 0.0.32
+  version: 0.0.56
   condition: jxRequirementsKuberhealthy.enabled
   name: health-checks-jx
   values:
