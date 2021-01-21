@@ -74,10 +74,10 @@
 	      <td><a href='https://github.com/jenkins-x-charts/nexus'>source</a></td>
 	    </tr>
     <tr>
-	      <td><a href='' title=''> <img src='' width='24px' height='24px'> chartmuseum </a></td>
+	      <td><a href='https://github.com/helm/chartmuseum' title='DEPRECATED Host your own Helm Chart Repository'> <img src='https://raw.githubusercontent.com/helm/chartmuseum/master/logo2.png' width='24px' height='24px'> chartmuseum </a></td>
 	      <td>2.14.2</td>
 	      <td></td>
-	      <td></td>
+	      <td><a href='https://github.com/helm/chartmuseum'>source</a></td>
 	    </tr>
     <tr>
 	      <td><a href='https://jenkins-x.io/' title='Jenkins X next gen cloud CI / CD platform for Kubernetes'> <img src='https://jenkins-x.github.io/jenkins-x-website/img/profile.png' width='24px' height='24px'> jx-build-controller </a></td>
