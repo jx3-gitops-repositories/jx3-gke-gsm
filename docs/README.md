@@ -113,10 +113,10 @@
 		      <td colspan='4'><h3>secret-infra</h3></td>
 		    </tr>
 	    <tr>
-	      <td><a href='https://github.com/godaddy/kubernetes-external-secrets' title='Kubernetes External Secrets CustomResourceDefinition'> <img src='' width='24px' height='24px'> kubernetes-external-secrets </a></td>
-	      <td>6.0.0</td>
+	      <td><a href='https://github.com/external-secrets/kubernetes-external-secrets' title='Kubernetes External Secrets CustomResourceDefinition'> <img src='' width='24px' height='24px'> kubernetes-external-secrets </a></td>
+	      <td>6.2.0</td>
 	      <td></td>
-	      <td><a href='https://github.com/godaddy/kubernetes-external-secrets'>source</a></td>
+	      <td><a href='https://github.com/external-secrets/kubernetes-external-secrets'>source</a></td>
 	    </tr>
     <tr>
 	      <td><a href='https://github.com/pusher/wave' title='wave chart that runs on kubernetes'> <img src='' width='24px' height='24px'> pusher-wave </a></td>
