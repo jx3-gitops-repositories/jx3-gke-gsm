@@ -114,7 +114,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     sources:
     - https://github.com/jenkins-x/jx-pipelines-visualizer
-    version: 1.1.8
+    version: 1.1.9
   - apiVersion: v1
     description: |
       This chart installs the jx-preview CRD and garbagecollection job
@@ -125,7 +125,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     version: 0.0.153
   - apiVersion: v1
-    appVersion: 0.0.930
+    appVersion: 0.0.933
     description: |
       This chart bootstraps installation of [Lighthouse](https://github.com/jenkins-x/lighthouse).
     home: https://github.com/jenkins-x/lighthouse
@@ -133,7 +133,7 @@
     name: lighthouse
     repositoryName: jenkins-x
     repositoryUrl: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-    version: 0.0.930
+    version: 0.0.933
   - apiVersion: v1
     description: A Helm chart for Kubernetes
     home: https://github.com/jenkins-x-charts/nexus
@@ -256,7 +256,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     sources:
     - https://github.com/jenkins-x/jx-pipelines-visualizer
-    version: 1.1.8
+    version: 1.1.9
   - apiVersion: v1
     description: |
       This chart installs the jx-preview CRD and garbagecollection job
@@ -267,7 +267,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     version: 0.0.153
   - apiVersion: v1
-    appVersion: 0.0.930
+    appVersion: 0.0.933
     description: |
       This chart bootstraps installation of [Lighthouse](https://github.com/jenkins-x/lighthouse).
     home: https://github.com/jenkins-x/lighthouse
@@ -275,7 +275,7 @@
     name: lighthouse
     repositoryName: jenkins-x
     repositoryUrl: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-    version: 0.0.930
+    version: 0.0.933
   - apiVersion: v1
     description: A Helm chart for Kubernetes
     home: https://github.com/jenkins-x-charts/nexus
