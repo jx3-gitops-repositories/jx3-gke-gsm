@@ -1,0 +1,9 @@
+filepath: ""
+repositories:
+- name: jx3
+  url: https://storage.googleapis.com/jenkinsxio/charts
+releases:
+- chart: jx3/jx-verify
+  namespace: jx-staging
+templates: {}
+renderedvalues: {}
