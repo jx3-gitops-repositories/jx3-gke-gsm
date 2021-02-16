@@ -42,6 +42,50 @@
     sources:
     - https://github.com/jetstack/cert-manager
     version: 1.1.0
+- namespace: jx-production
+  path: helmfiles/jx-production/helmfile.yaml
+  releases:
+  - apiVersion: v1
+    description: |
+      This chart deletes any pods which can't load their images to work around timing issues with Workload Identity and preview environments
+    home: https://github.com/jenkins-x/jx-verify
+    icon: https://raw.githubusercontent.com/jenkins-x/jenkins-x-website/master/images/logo/jenkinsx-icon-color.svg
+    name: jx-verify
+    repositoryName: jx3
+    repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
+- namespace: jx-production
+  path: helmfiles/jx-production/helmfile.yaml
+  releases:
+  - apiVersion: v1
+    description: |
+      This chart deletes any pods which can't load their images to work around timing issues with Workload Identity and preview environments
+    home: https://github.com/jenkins-x/jx-verify
+    icon: https://raw.githubusercontent.com/jenkins-x/jenkins-x-website/master/images/logo/jenkinsx-icon-color.svg
+    name: jx-verify
+    repositoryName: jx3
+    repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
+- namespace: jx-staging
+  path: helmfiles/jx-staging/helmfile.yaml
+  releases:
+  - apiVersion: v1
+    description: |
+      This chart deletes any pods which can't load their images to work around timing issues with Workload Identity and preview environments
+    home: https://github.com/jenkins-x/jx-verify
+    icon: https://raw.githubusercontent.com/jenkins-x/jenkins-x-website/master/images/logo/jenkinsx-icon-color.svg
+    name: jx-verify
+    repositoryName: jx3
+    repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
+- namespace: jx-staging
+  path: helmfiles/jx-staging/helmfile.yaml
+  releases:
+  - apiVersion: v1
+    description: |
+      This chart deletes any pods which can't load their images to work around timing issues with Workload Identity and preview environments
+    home: https://github.com/jenkins-x/jx-verify
+    icon: https://raw.githubusercontent.com/jenkins-x/jenkins-x-website/master/images/logo/jenkinsx-icon-color.svg
+    name: jx-verify
+    repositoryName: jx3
+    repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
 - namespace: jx
   path: helmfiles/jx/helmfile.yaml
   releases:
@@ -125,7 +169,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     version: 0.0.153
   - apiVersion: v1
-    appVersion: 0.0.933
+    appVersion: 0.0.934
     description: |
       This chart bootstraps installation of [Lighthouse](https://github.com/jenkins-x/lighthouse).
     home: https://github.com/jenkins-x/lighthouse
@@ -133,7 +177,7 @@
     name: lighthouse
     repositoryName: jenkins-x
     repositoryUrl: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-    version: 0.0.933
+    version: 0.0.934
   - apiVersion: v1
     description: A Helm chart for Kubernetes
     home: https://github.com/jenkins-x-charts/nexus
@@ -267,7 +311,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     version: 0.0.153
   - apiVersion: v1
-    appVersion: 0.0.933
+    appVersion: 0.0.934
     description: |
       This chart bootstraps installation of [Lighthouse](https://github.com/jenkins-x/lighthouse).
     home: https://github.com/jenkins-x/lighthouse
@@ -275,7 +319,7 @@
     name: lighthouse
     repositoryName: jenkins-x
     repositoryUrl: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-    version: 0.0.933
+    version: 0.0.934
   - apiVersion: v1
     description: A Helm chart for Kubernetes
     home: https://github.com/jenkins-x-charts/nexus

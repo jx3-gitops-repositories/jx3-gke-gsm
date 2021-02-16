@@ -1,9 +1,16 @@
 filepath: ""
+environments:
+  default:
+    values:
+    - jx-values.yaml
 repositories:
 - name: jx3
   url: https://storage.googleapis.com/jenkinsxio/charts
 releases:
 - chart: jx3/jx-verify
+  name: jx-verify
   namespace: jx-staging
+  values:
+  - jx-values.yaml
 templates: {}
 renderedvalues: {}
