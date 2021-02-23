@@ -170,7 +170,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     version: 0.0.153
   - apiVersion: v1
-    appVersion: 0.0.934
+    appVersion: 0.0.936
     description: |
       This chart bootstraps installation of [Lighthouse](https://github.com/jenkins-x/lighthouse).
     home: https://github.com/jenkins-x/lighthouse
@@ -178,7 +178,7 @@
     name: lighthouse
     repositoryName: jenkins-x
     repositoryUrl: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-    version: 0.0.934
+    version: 0.0.936
   - apiVersion: v1
     description: A Helm chart for Kubernetes
     home: https://github.com/jenkins-x-charts/nexus
@@ -313,7 +313,7 @@
     repositoryUrl: https://storage.googleapis.com/jenkinsxio/charts
     version: 0.0.153
   - apiVersion: v1
-    appVersion: 0.0.934
+    appVersion: 0.0.936
     description: |
       This chart bootstraps installation of [Lighthouse](https://github.com/jenkins-x/lighthouse).
     home: https://github.com/jenkins-x/lighthouse
@@ -321,7 +321,7 @@
     name: lighthouse
     repositoryName: jenkins-x
     repositoryUrl: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-    version: 0.0.934
+    version: 0.0.936
   - apiVersion: v1
     description: A Helm chart for Kubernetes
     home: https://github.com/jenkins-x-charts/nexus
