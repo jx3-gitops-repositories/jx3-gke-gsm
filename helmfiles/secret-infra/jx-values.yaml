@@ -26,7 +26,7 @@ jxRequirements:
     gitKind: github
     gitName: github
     gitServer: https://github.com
-    kanikoFlags: --snapshotMode=redo
+    kanikoFlags: --skip-unused-stages --snapshotMode=redo
     provider: gke
     registry: gcr.io
   environments:
