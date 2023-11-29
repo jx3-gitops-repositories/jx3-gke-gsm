@@ -20,7 +20,7 @@ releases:
   - ../../versionStream/charts/bitnami/external-dns/values.yaml.gotmpl
   - jx-values.yaml
 - chart: jxgh/acme
-  version: 0.0.24
+  version: 0.1.0
   condition: jxRequirementsIngressTLS.enabled
   name: acme-jx
   values:
