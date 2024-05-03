@@ -28,7 +28,6 @@ jxRequirements:
     gitServer: https://github.com
     kanikoFlags: --skip-unused-stages --snapshotMode=redo
     provider: gke
-    registry: gcr.io
   environments:
   - key: dev
   - key: staging
