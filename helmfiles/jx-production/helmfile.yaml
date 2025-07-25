@@ -1,8 +1,8 @@
-filepath: ""
 environments:
   default:
     values:
     - jx-values.yaml
+---
 repositories:
 - name: jxgh
   url: https://jenkins-x-charts.github.io/repo
@@ -12,5 +12,3 @@ releases:
   namespace: jx-production
   values:
   - jx-values.yaml
-templates: {}
-renderedvalues: {}
