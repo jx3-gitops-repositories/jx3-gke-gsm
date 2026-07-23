@@ -1,4 +1,5 @@
 helmfiles:
+- path: helmfiles/envoy-gateway-system/helmfile.yaml
 - path: helmfiles/cert-manager/helmfile.yaml
 - path: helmfiles/jx-production/helmfile.yaml
 - path: helmfiles/jx-staging/helmfile.yaml
