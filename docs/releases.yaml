@@ -1,3 +1,5 @@
+- namespace: envoy-gateway-system
+  path: helmfiles/envoy-gateway-system/helmfile.yaml
 - namespace: cert-manager
   path: helmfiles/cert-manager/helmfile.yaml
 - namespace: jx-production
